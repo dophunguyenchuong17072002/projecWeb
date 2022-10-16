@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <img src="image/bongdentat.png" alt="bongdentat" id="image" />
+
+    <div class="input">
+      <input
+        type="text"
+        oninput="checknumber()"
+        id="number"
+        style="outline-style: none"
+      />
+
+      <button type="button" onclick="button()" id="button">Submit</button>
+    </div>
+
+    <script>
+      var check = true;
+
+      var checknumber = function () {
+        var x = document.getElementById("number").value;
+
+        if (isNaN(x)) {
+          document.getElementById("number").style.border = "1px solid red";
+        } else {
+          document.getElementById("number").style.border = "1px solid black";
+
+          
+        }
+      };
+
+      var button = function () {
+        if (
+          document.getElementById("image").src.endsWith("image/bongdentat.png")
+        ) {
+          document.getElementById("image").src = "image/bongdenmo.png";
+        } else {
+          document.getElementById("image").src = "image/bongdentat.png";
+        }
+      };
+    </script>
+  </body>
+</html>
